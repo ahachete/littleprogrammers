@@ -18,43 +18,36 @@
 
   h1 {
     text-align: center;
-    font-size: 2.2rem;
+    font-size: 2.6rem;
     color: #fff;
     text-shadow: 3px 3px 0 #e84393, -1px -1px 0 #6c5ce7;
-    padding: 10px 0 6px;
+    padding: 10px 0 8px;
     background: linear-gradient(90deg, #6c5ce7, #e84393, #fd79a8, #fdcb6e, #00b894);
     letter-spacing: 2px;
   }
 
   .container {
     display: flex;
-    height: calc(100vh - 56px);
+    height: calc(100vh - 62px);
     gap: 0;
   }
 
   /* LEFT PANEL */
   .left-panel {
-    width: 38%;
-    min-width: 320px;
+    width: 36%;
+    min-width: 340px;
     display: flex;
     flex-direction: column;
-    background: rgba(255,255,255,0.85);
+    background: rgba(255,255,255,0.88);
     border-right: 4px solid #dfe6e9;
   }
 
-  .palette-title {
-    text-align: center;
-    font-size: 1.1rem;
-    color: #636e72;
-    padding: 8px 0 4px;
-  }
-
   .palette {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
     justify-content: center;
-    gap: 8px;
-    padding: 8px 12px;
+    gap: 10px;
+    padding: 12px 16px;
     border-bottom: 3px dashed #b2bec3;
   }
 
@@ -63,22 +56,22 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 72px;
-    height: 72px;
+    width: 82px;
+    height: 78px;
     border: 3px solid rgba(0,0,0,0.1);
-    border-radius: 16px;
+    border-radius: 18px;
     cursor: pointer;
     transition: transform 0.15s, box-shadow 0.15s;
     font-family: inherit;
-    font-size: 0.7rem;
+    font-size: 0.95rem;
     font-weight: bold;
     color: #fff;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
     user-select: none;
   }
-  .palette-btn:hover { transform: scale(1.12); box-shadow: 0 4px 16px rgba(0,0,0,0.2); }
+  .palette-btn:hover { transform: scale(1.12); box-shadow: 0 4px 16px rgba(0,0,0,0.25); }
   .palette-btn:active { transform: scale(0.95); }
-  .palette-btn .icon { font-size: 1.7rem; line-height: 1; }
+  .palette-btn .icon { font-size: 2.1rem; line-height: 1; }
 
   .palette-btn.forward  { background: linear-gradient(135deg, #00b894, #55efc4); }
   .palette-btn.backward { background: linear-gradient(135deg, #d63031, #ff7675); }
@@ -89,90 +82,93 @@
   .palette-btn.clap     { background: linear-gradient(135deg, #fdcb6e, #ffeaa7); color: #6d4c00; text-shadow: none; }
   .palette-btn.jump     { background: linear-gradient(135deg, #e84393, #fd79a8); }
 
+  .program-header {
+    display: flex;
+    align-items: center;
+    padding: 8px 14px;
+    gap: 10px;
+  }
+
   .program-title {
-    text-align: center;
-    font-size: 1.1rem;
+    flex: 1;
+    font-size: 1.5rem;
     color: #636e72;
-    padding: 8px 0 4px;
+  }
+
+  .program-header .ctrl-btn {
+    font-size: 1.1rem;
+    padding: 8px 20px;
   }
 
   .program-list {
     flex: 1;
     overflow-y: auto;
-    padding: 4px 12px;
+    padding: 6px 16px;
     min-height: 0;
   }
 
   .program-item {
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 6px 10px;
-    margin-bottom: 6px;
-    border-radius: 12px;
+    gap: 12px;
+    padding: 8px 14px;
+    margin-bottom: 8px;
+    border-radius: 14px;
     background: #fff;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     transition: transform 0.2s, box-shadow 0.3s;
     position: relative;
   }
   .program-item.highlight {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px 4px rgba(108, 92, 231, 0.6);
+    transform: scale(1.06);
+    box-shadow: 0 0 24px 6px rgba(108, 92, 231, 0.6);
     z-index: 1;
   }
 
   .program-item .line-num {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     font-weight: bold;
     color: #b2bec3;
-    min-width: 28px;
+    min-width: 32px;
     text-align: right;
   }
 
   .program-item .instr-icon {
-    width: 38px;
-    height: 38px;
-    border-radius: 10px;
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     color: #fff;
     flex-shrink: 0;
   }
 
   .program-item .instr-label {
     flex: 1;
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     color: #2d3436;
   }
 
   .program-item .remove-btn {
     background: none;
     border: none;
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     color: #b2bec3;
     cursor: pointer;
-    padding: 0 4px;
+    padding: 0 6px;
     transition: color 0.2s;
     font-family: inherit;
   }
   .program-item .remove-btn:hover { color: #d63031; }
 
-  .controls {
-    display: flex;
-    gap: 12px;
-    padding: 12px;
-    justify-content: center;
-    border-top: 3px dashed #b2bec3;
-  }
-
   .ctrl-btn {
     font-family: inherit;
-    font-size: 1.3rem;
-    padding: 12px 32px;
+    font-size: 1.5rem;
+    padding: 14px 40px;
     border: none;
-    border-radius: 16px;
+    border-radius: 18px;
     cursor: pointer;
     font-weight: bold;
     transition: transform 0.15s, box-shadow 0.15s;
@@ -216,7 +212,7 @@
   .empty-msg {
     text-align: center;
     color: #b2bec3;
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     padding: 30px 20px;
   }
 
@@ -242,24 +238,23 @@
 
 <div class="container">
   <div class="left-panel">
-    <div class="palette-title">Pick an order:</div>
     <div class="palette">
-      <button class="palette-btn forward"  onclick="addInstruction('forward')"><span class="icon">⬆️</span>Forward</button>
-      <button class="palette-btn backward" onclick="addInstruction('backward')"><span class="icon">⬇️</span>Backward</button>
-      <button class="palette-btn left"     onclick="addInstruction('left')"><span class="icon">↩️</span>Turn L</button>
-      <button class="palette-btn right"    onclick="addInstruction('right')"><span class="icon">↪️</span>Turn R</button>
-      <button class="palette-btn run"      onclick="addInstruction('run')"><span class="icon">⏩</span>Run!</button>
-      <button class="palette-btn sing"     onclick="addInstruction('sing')"><span class="icon">🎵</span>Sing!</button>
-      <button class="palette-btn clap"     onclick="addInstruction('clap')"><span class="icon">👏</span>Clap!</button>
-      <button class="palette-btn jump"     onclick="addInstruction('jump')"><span class="icon">🦘</span>Jump!</button>
+      <button class="palette-btn forward"  onclick="addInstruction('forward')"><span class="icon">&#x2B06;&#xFE0F;</span>Forward</button>
+      <button class="palette-btn backward" onclick="addInstruction('backward')"><span class="icon">&#x2B07;&#xFE0F;</span>Back</button>
+      <button class="palette-btn left"     onclick="addInstruction('left')"><span class="icon">&#x21A9;&#xFE0F;</span>Turn L</button>
+      <button class="palette-btn right"    onclick="addInstruction('right')"><span class="icon">&#x21AA;&#xFE0F;</span>Turn R</button>
+      <button class="palette-btn run"      onclick="addInstruction('run')"><span class="icon">&#x23E9;</span>Run!</button>
+      <button class="palette-btn sing"     onclick="addInstruction('sing')"><span class="icon">&#127925;</span>Sing!</button>
+      <button class="palette-btn clap"     onclick="addInstruction('clap')"><span class="icon">&#128079;</span>Clap!</button>
+      <button class="palette-btn jump"     onclick="addInstruction('jump')"><span class="icon">&#129432;</span>Jump!</button>
     </div>
-    <div class="program-title">The Program:</div>
-    <div class="program-list" id="programList">
-      <div class="empty-msg">No orders yet!<br>Click the buttons above &#x1F446;</div>
-    </div>
-    <div class="controls">
+    <div class="program-header">
+      <div class="program-title">The Program:</div>
       <button class="ctrl-btn play-btn" id="playBtn" onclick="runProgram()">&#9654; PLAY</button>
       <button class="ctrl-btn clear-btn" id="clearBtn" onclick="clearProgram()">&#128465; CLEAR</button>
+    </div>
+    <div class="program-list" id="programList">
+      <div class="empty-msg">No orders yet!<br>Click the buttons above &#x1F446;</div>
     </div>
   </div>
   <div class="right-panel">
@@ -275,16 +270,18 @@ const STEP = 50;          // pixels per "move forward"
 const GRID = STEP;
 const ANIM_MS = 800;      // ms for one instruction animation
 const PAUSE_MS = 500;     // pause between instructions
+const ROBOT_R = 28;       // robot radius
+const ROBOT_MARGIN = ROBOT_R + 6; // margin from canvas edge
 
 const INSTR_META = {
-  forward:  { icon: '⬆️',  label: 'Forward',  bg: 'linear-gradient(135deg,#00b894,#55efc4)' },
-  backward: { icon: '⬇️',  label: 'Backward', bg: 'linear-gradient(135deg,#d63031,#ff7675)' },
-  left:     { icon: '↩️',  label: 'Turn Left', bg: 'linear-gradient(135deg,#0984e3,#74b9ff)' },
-  right:    { icon: '↪️',  label: 'Turn Right',bg: 'linear-gradient(135deg,#e17055,#fab1a0)' },
-  run:      { icon: '⏩',  label: 'Run!',      bg: 'linear-gradient(135deg,#00b300,#7bed9f)' },
-  sing:     { icon: '🎵',  label: 'Sing!',     bg: 'linear-gradient(135deg,#6c5ce7,#a29bfe)' },
-  clap:     { icon: '👏',  label: 'Clap!',     bg: 'linear-gradient(135deg,#fdcb6e,#ffeaa7)' },
-  jump:     { icon: '🦘',  label: 'Jump!',     bg: 'linear-gradient(135deg,#e84393,#fd79a8)' },
+  forward:  { icon: '\u2B06\uFE0F',  label: 'Forward',   bg: 'linear-gradient(135deg,#00b894,#55efc4)' },
+  backward: { icon: '\u2B07\uFE0F',  label: 'Backward',  bg: 'linear-gradient(135deg,#d63031,#ff7675)' },
+  left:     { icon: '\u21A9\uFE0F',  label: 'Turn Left',  bg: 'linear-gradient(135deg,#0984e3,#74b9ff)' },
+  right:    { icon: '\u21AA\uFE0F',  label: 'Turn Right', bg: 'linear-gradient(135deg,#e17055,#fab1a0)' },
+  run:      { icon: '\u23E9',        label: 'Run!',       bg: 'linear-gradient(135deg,#00b300,#7bed9f)' },
+  sing:     { icon: '\uD83C\uDFB5', label: 'Sing!',      bg: 'linear-gradient(135deg,#6c5ce7,#a29bfe)' },
+  clap:     { icon: '\uD83D\uDC4F', label: 'Clap!',      bg: 'linear-gradient(135deg,#fdcb6e,#ffeaa7)' },
+  jump:     { icon: '\uD83E\uDD98', label: 'Jump!',      bg: 'linear-gradient(135deg,#e84393,#fd79a8)' },
 };
 
 let program = [];       // array of instruction keys
@@ -304,9 +301,9 @@ const ctx = canvas.getContext('2d');
 
 function resizeCanvas() {
   const panel = document.querySelector('.right-panel');
-  const w = panel.clientWidth - 32;
-  const h = panel.clientHeight - 32;
-  const size = Math.min(w, h, 600);
+  const w = panel.clientWidth * 0.85;
+  const h = panel.clientHeight * 0.85;
+  const size = Math.min(w, h);
   canvas.width = size;
   canvas.height = size;
   resetRobot();
@@ -321,19 +318,24 @@ function resetRobot() {
   trailColorIdx = 0;
 }
 
+// Clamp position so robot stays within canvas bounds
+function clampPosition(x, y) {
+  return {
+    x: Math.max(ROBOT_MARGIN, Math.min(canvas.width - ROBOT_MARGIN, x)),
+    y: Math.max(ROBOT_MARGIN, Math.min(canvas.height - ROBOT_MARGIN, y))
+  };
+}
+
 window.addEventListener('resize', resizeCanvas);
 setTimeout(resizeCanvas, 50);
 
 // ============================================================
 // DRAWING
 // ============================================================
-function drawScene() {
+function drawBackground() {
   const W = canvas.width, H = canvas.height;
-  // Background
   ctx.fillStyle = '#f8f9fa';
   ctx.fillRect(0, 0, W, H);
-
-  // Grid
   ctx.strokeStyle = '#dfe6e9';
   ctx.lineWidth = 1;
   for (let x = 0; x <= W; x += GRID) {
@@ -342,104 +344,169 @@ function drawScene() {
   for (let y = 0; y <= H; y += GRID) {
     ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke();
   }
+}
 
-  // Trail
-  for (const t of trail) {
+function drawTrail(trailData) {
+  for (const t of trailData) {
     ctx.strokeStyle = t.color;
-    ctx.lineWidth = 6;
+    ctx.lineWidth = 7;
     ctx.lineCap = 'round';
     ctx.beginPath();
     ctx.moveTo(t.x1, t.y1);
     ctx.lineTo(t.x2, t.y2);
     ctx.stroke();
   }
+}
 
-  // Robot
+function drawScene() {
+  drawBackground();
+  drawTrail(trail);
   drawRobot(robot.x, robot.y, robot.angle);
 }
 
-function drawRobot(x, y, angle, scale = 1, jumpOffset = 0) {
-  const W = canvas.width, H = canvas.height;
-  ctx.fillStyle = '#f8f9fa';
-  // Redraw background + grid + trail for animation frames
-  ctx.fillRect(0, 0, W, H);
-  ctx.strokeStyle = '#dfe6e9';
-  ctx.lineWidth = 1;
-  for (let gx = 0; gx <= W; gx += GRID) {
-    ctx.beginPath(); ctx.moveTo(gx, 0); ctx.lineTo(gx, H); ctx.stroke();
-  }
-  for (let gy = 0; gy <= H; gy += GRID) {
-    ctx.beginPath(); ctx.moveTo(0, gy); ctx.lineTo(W, gy); ctx.stroke();
-  }
-  for (const t of trail) {
-    ctx.strokeStyle = t.color;
-    ctx.lineWidth = 6;
-    ctx.lineCap = 'round';
-    ctx.beginPath();
-    ctx.moveTo(t.x1, t.y1);
-    ctx.lineTo(t.x2, t.y2);
-    ctx.stroke();
-  }
+function drawFullFrame(rx, ry, angle, trailData, scale, jumpOffset) {
+  drawBackground();
+  drawTrail(trailData);
+  drawRobot(rx, ry, angle, scale, jumpOffset);
+}
 
+function drawRobot(x, y, angle, scale = 1, jumpOffset = 0) {
   ctx.save();
   ctx.translate(x, y - jumpOffset);
   ctx.rotate((angle * Math.PI) / 180);
   ctx.scale(scale, scale);
 
-  const r = 20;
+  const r = ROBOT_R;
 
-  // Shadow
-  ctx.fillStyle = 'rgba(0,0,0,0.1)';
+  // Ground shadow
+  ctx.fillStyle = 'rgba(0,0,0,0.10)';
   ctx.beginPath();
-  ctx.ellipse(0, r + 4, r, 6, 0, 0, Math.PI * 2);
+  ctx.ellipse(0, r + 6, r * 0.9, 7, 0, 0, Math.PI * 2);
   ctx.fill();
 
-  // Body (circle)
+  // --- Isometric-angled robot body ---
+  // Main body (rounded rectangle, slightly taller for perspective)
+  const bw = r * 1.5, bh = r * 1.8;
   ctx.fillStyle = '#636e72';
-  ctx.beginPath();
-  ctx.arc(0, 0, r, 0, Math.PI * 2);
+  roundRect(ctx, -bw/2, -bh/2 + 2, bw, bh, 10);
   ctx.fill();
   ctx.strokeStyle = '#2d3436';
-  ctx.lineWidth = 2;
+  ctx.lineWidth = 2.5;
+  roundRect(ctx, -bw/2, -bh/2 + 2, bw, bh, 10);
   ctx.stroke();
+
+  // Chest plate (lighter inset)
+  ctx.fillStyle = '#74b9ff';
+  roundRect(ctx, -bw/2 + 6, -bh/2 + 14, bw - 12, bh * 0.35, 6);
+  ctx.fill();
+  ctx.strokeStyle = '#0984e3';
+  ctx.lineWidth = 1.5;
+  roundRect(ctx, -bw/2 + 6, -bh/2 + 14, bw - 12, bh * 0.35, 6);
+  ctx.stroke();
+
+  // Chest buttons (3 small circles)
+  const btnY = -bh/2 + 22;
+  ctx.fillStyle = '#e84393';
+  ctx.beginPath(); ctx.arc(-8, btnY, 3, 0, Math.PI*2); ctx.fill();
+  ctx.fillStyle = '#fdcb6e';
+  ctx.beginPath(); ctx.arc(0, btnY, 3, 0, Math.PI*2); ctx.fill();
+  ctx.fillStyle = '#00b894';
+  ctx.beginPath(); ctx.arc(8, btnY, 3, 0, Math.PI*2); ctx.fill();
+
+  // Head (rounded square, slightly above body)
+  const hw = r * 1.3, hh = r * 1.1;
+  const headY = -bh/2 - hh/2 + 4;
+  ctx.fillStyle = '#b2bec3';
+  roundRect(ctx, -hw/2, headY - hh/2, hw, hh, 8);
+  ctx.fill();
+  ctx.strokeStyle = '#636e72';
+  ctx.lineWidth = 2.5;
+  roundRect(ctx, -hw/2, headY - hh/2, hw, hh, 8);
+  ctx.stroke();
+
+  // Visor / face plate
+  ctx.fillStyle = '#2d3436';
+  roundRect(ctx, -hw/2 + 5, headY - hh/2 + 5, hw - 10, hh * 0.55, 5);
+  ctx.fill();
+
+  // Eyes (glowing in visor)
+  const eyeY = headY - 2;
+  ctx.fillStyle = '#55efc4';
+  ctx.shadowColor = '#55efc4';
+  ctx.shadowBlur = 8;
+  ctx.beginPath(); ctx.arc(-9, eyeY, 5.5, 0, Math.PI * 2); ctx.fill();
+  ctx.beginPath(); ctx.arc(9, eyeY, 5.5, 0, Math.PI * 2); ctx.fill();
+  ctx.shadowBlur = 0;
+
+  // Pupils
+  ctx.fillStyle = '#fff';
+  ctx.beginPath(); ctx.arc(-9, eyeY - 1.5, 2.5, 0, Math.PI * 2); ctx.fill();
+  ctx.beginPath(); ctx.arc(9, eyeY - 1.5, 2.5, 0, Math.PI * 2); ctx.fill();
+
+  // Mouth (small rectangle in visor)
+  ctx.fillStyle = '#55efc4';
+  ctx.shadowColor = '#55efc4';
+  ctx.shadowBlur = 4;
+  roundRect(ctx, -6, headY + 6, 12, 4, 2);
+  ctx.fill();
+  ctx.shadowBlur = 0;
 
   // Antenna
-  ctx.strokeStyle = '#b2bec3';
+  ctx.strokeStyle = '#636e72';
   ctx.lineWidth = 3;
   ctx.beginPath();
-  ctx.moveTo(0, -r);
-  ctx.lineTo(0, -r - 12);
+  ctx.moveTo(0, headY - hh/2);
+  ctx.lineTo(0, headY - hh/2 - 14);
   ctx.stroke();
+  // Antenna ball
   ctx.fillStyle = '#e84393';
+  ctx.shadowColor = '#e84393';
+  ctx.shadowBlur = 8;
   ctx.beginPath();
-  ctx.arc(0, -r - 14, 4, 0, Math.PI * 2);
+  ctx.arc(0, headY - hh/2 - 16, 5, 0, Math.PI * 2);
   ctx.fill();
+  ctx.shadowBlur = 0;
 
-  // Eyes (in the direction the robot faces = "up" in local coords)
-  ctx.fillStyle = '#fff';
-  ctx.beginPath();
-  ctx.arc(-7, -6, 6, 0, Math.PI * 2);
+  // Arms (small rectangles on sides)
+  ctx.fillStyle = '#636e72';
+  // Left arm
+  roundRect(ctx, -bw/2 - 8, -bh/2 + 12, 8, bh * 0.4, 4);
   ctx.fill();
-  ctx.beginPath();
-  ctx.arc(7, -6, 6, 0, Math.PI * 2);
-  ctx.fill();
-  // Pupils
-  ctx.fillStyle = '#2d3436';
-  ctx.beginPath();
-  ctx.arc(-7, -8, 3, 0, Math.PI * 2);
-  ctx.fill();
-  ctx.beginPath();
-  ctx.arc(7, -8, 3, 0, Math.PI * 2);
-  ctx.fill();
-
-  // Mouth
   ctx.strokeStyle = '#2d3436';
-  ctx.lineWidth = 2;
-  ctx.beginPath();
-  ctx.arc(0, 4, 7, 0.1 * Math.PI, 0.9 * Math.PI);
+  ctx.lineWidth = 1.5;
+  roundRect(ctx, -bw/2 - 8, -bh/2 + 12, 8, bh * 0.4, 4);
   ctx.stroke();
+  // Right arm
+  ctx.fillStyle = '#636e72';
+  roundRect(ctx, bw/2, -bh/2 + 12, 8, bh * 0.4, 4);
+  ctx.fill();
+  ctx.strokeStyle = '#2d3436';
+  roundRect(ctx, bw/2, -bh/2 + 12, 8, bh * 0.4, 4);
+  ctx.stroke();
+
+  // Feet (two small rounded rects at bottom)
+  ctx.fillStyle = '#2d3436';
+  roundRect(ctx, -bw/2 + 3, bh/2, 12, 7, 3);
+  ctx.fill();
+  roundRect(ctx, bw/2 - 15, bh/2, 12, 7, 3);
+  ctx.fill();
 
   ctx.restore();
+}
+
+// Helper: draw rounded rectangle path
+function roundRect(ctx, x, y, w, h, r) {
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.lineTo(x + w - r, y);
+  ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+  ctx.lineTo(x + w, y + h - r);
+  ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+  ctx.lineTo(x + r, y + h);
+  ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+  ctx.lineTo(x, y + r);
+  ctx.quadraticCurveTo(x, y, x + r, y);
+  ctx.closePath();
 }
 
 // ============================================================
@@ -465,7 +532,6 @@ function renderProgram() {
     `;
     list.appendChild(item);
   });
-  // Scroll to bottom
   list.scrollTop = list.scrollHeight;
 }
 
@@ -498,13 +564,11 @@ async function runProgram() {
   running = true;
   document.getElementById('playBtn').disabled = true;
 
-  // Reset robot position
   resetRobot();
   drawScene();
   await sleep(300);
 
   for (let i = 0; i < program.length; i++) {
-    // Highlight current instruction
     highlightInstruction(i);
     await sleep(200);
 
@@ -512,11 +576,9 @@ async function runProgram() {
     await executeInstruction(key);
 
     unhighlightAll();
-    // Pause between instructions
     if (i < program.length - 1) await sleep(PAUSE_MS);
   }
 
-  // Celebration!
   launchConfetti();
 
   running = false;
@@ -554,7 +616,7 @@ async function executeInstruction(key) {
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 
 function directionVector(angle) {
-  const rad = ((angle - 90) * Math.PI) / 180; // -90 because 0=up
+  const rad = ((angle - 90) * Math.PI) / 180;
   return { dx: Math.cos(rad), dy: Math.sin(rad) };
 }
 
@@ -562,29 +624,26 @@ async function animateMove(steps) {
   const { dx, dy } = directionVector(robot.angle);
   const totalDist = steps * STEP;
   const x1 = robot.x, y1 = robot.y;
-  const x2 = x1 + dx * totalDist;
-  const y2 = y1 + dy * totalDist;
+  let x2 = x1 + dx * totalDist;
+  let y2 = y1 + dy * totalDist;
+  // Clamp destination
+  const clamped = clampPosition(x2, y2);
+  x2 = clamped.x; y2 = clamped.y;
+
   const duration = ANIM_MS * (Math.abs(steps) > 1 ? 1.5 : 1);
   const startTime = performance.now();
-
-  // Pick trail color
   const color = TRAIL_COLORS[trailColorIdx % TRAIL_COLORS.length];
   trailColorIdx++;
 
   return new Promise(resolve => {
     function frame(now) {
       const t = Math.min((now - startTime) / duration, 1);
-      const ease = t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t; // ease in-out
+      const ease = t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
       const cx = x1 + (x2 - x1) * ease;
       const cy = y1 + (y2 - y1) * ease;
 
-      // Update partial trail
       const partialTrail = { x1, y1, x2: cx, y2: cy, color };
-      const allTrails = [...trail, partialTrail];
-      const savedTrail = trail;
-      trail = allTrails;
-      drawRobot(cx, cy, robot.angle);
-      trail = savedTrail;
+      drawFullFrame(cx, cy, robot.angle, [...trail, partialTrail], 1, 0);
 
       if (t < 1) {
         requestAnimationFrame(frame);
@@ -611,7 +670,7 @@ async function animateRotate(degrees) {
       const t = Math.min((now - startTime) / ANIM_MS, 1);
       const ease = t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
       const a = startAngle + (endAngle - startAngle) * ease;
-      drawRobot(robot.x, robot.y, a);
+      drawFullFrame(robot.x, robot.y, a, trail, 1, 0);
 
       if (t < 1) {
         requestAnimationFrame(frame);
@@ -628,21 +687,21 @@ async function animateRotate(degrees) {
 
 async function animateSing() {
   playSingMelody();
-  // Wiggle animation
   const startTime = performance.now();
-  const dur = 1200;
+  const dur = 1800;
   return new Promise(resolve => {
     function frame(now) {
       const t = Math.min((now - startTime) / dur, 1);
-      const wiggle = Math.sin(t * Math.PI * 8) * 8;
-      drawRobot(robot.x + wiggle, robot.y, robot.angle, 1 + Math.sin(t * Math.PI * 4) * 0.08);
-      // Draw music notes floating up
-      const nctx = ctx;
-      nctx.font = '24px serif';
-      nctx.fillStyle = `rgba(108,92,231,${1 - t})`;
-      nctx.fillText('♪', robot.x - 25, robot.y - 30 - t * 40);
-      nctx.fillText('♫', robot.x + 15, robot.y - 20 - t * 50);
-      nctx.fillText('♪', robot.x - 5, robot.y - 40 - t * 30);
+      const wiggle = Math.sin(t * Math.PI * 10) * 12;
+      const sc = 1 + Math.sin(t * Math.PI * 5) * 0.1;
+      drawFullFrame(robot.x + wiggle, robot.y, robot.angle, trail, sc, 0);
+      // Floating music notes
+      const noteSize = 28 + t * 10;
+      ctx.font = `${noteSize}px serif`;
+      ctx.fillStyle = `rgba(108,92,231,${Math.max(0, 1 - t * 1.2)})`;
+      ctx.fillText('\u266A', robot.x - 35, robot.y - 40 - t * 60);
+      ctx.fillText('\u266B', robot.x + 20, robot.y - 30 - t * 70);
+      ctx.fillText('\u266A', robot.x - 8, robot.y - 55 - t * 50);
 
       if (t < 1) requestAnimationFrame(frame);
       else { drawScene(); resolve(); }
@@ -654,20 +713,24 @@ async function animateSing() {
 async function animateClap() {
   playClapSound();
   const startTime = performance.now();
-  const dur = 800;
+  const dur = 1400;
   return new Promise(resolve => {
     function frame(now) {
       const t = Math.min((now - startTime) / dur, 1);
-      const squeeze = 1 + Math.sin(t * Math.PI * 6) * 0.15;
-      drawRobot(robot.x, robot.y, robot.angle, squeeze);
-      // Draw clap stars
-      if (t < 0.7) {
-        const nctx = ctx;
-        nctx.font = `${20 + t * 20}px serif`;
-        nctx.fillStyle = `rgba(253,203,110,${1 - t})`;
-        nctx.fillText('✨', robot.x - 30 - t * 15, robot.y - 15);
-        nctx.fillText('✨', robot.x + 20 + t * 15, robot.y - 15);
-        nctx.fillText('👏', robot.x - 10, robot.y - 30 - t * 20);
+      const squeeze = 1 + Math.sin(t * Math.PI * 8) * 0.18;
+      drawFullFrame(robot.x, robot.y, robot.angle, trail, squeeze, 0);
+      // Clap bursts
+      if (t < 0.8) {
+        const burstAlpha = Math.max(0, 1 - t * 1.4);
+        const sz = 24 + t * 30;
+        ctx.font = `${sz}px serif`;
+        ctx.fillStyle = `rgba(253,203,110,${burstAlpha})`;
+        ctx.fillText('\u2728', robot.x - 40 - t * 25, robot.y - 20);
+        ctx.fillText('\u2728', robot.x + 25 + t * 25, robot.y - 20);
+        ctx.fillText('\uD83D\uDC4F', robot.x - 14, robot.y - 40 - t * 35);
+        // Extra stars
+        ctx.fillText('\u2728', robot.x - 10 - t * 40, robot.y - 50 - t * 20);
+        ctx.fillText('\u2728', robot.x + 15 + t * 35, robot.y - 45 - t * 25);
       }
       if (t < 1) requestAnimationFrame(frame);
       else { drawScene(); resolve(); }
@@ -679,13 +742,24 @@ async function animateClap() {
 async function animateJump() {
   playBoop(600);
   const startTime = performance.now();
-  const dur = 700;
+  const dur = 1000;
   return new Promise(resolve => {
     function frame(now) {
       const t = Math.min((now - startTime) / dur, 1);
-      const jumpH = Math.sin(t * Math.PI) * 35;
-      const squash = t > 0.85 ? 1 + (1 - t) / 0.15 * 0.1 : 1;
-      drawRobot(robot.x, robot.y, robot.angle, squash, jumpH);
+      const jumpH = Math.sin(t * Math.PI) * 55;
+      // Squash on takeoff and landing
+      let sc = 1;
+      if (t < 0.1) sc = 1 - t * 2;           // squash before jump
+      else if (t > 0.85) sc = 1 + (t - 0.85) / 0.15 * 0.15; // squash on land
+      drawFullFrame(robot.x, robot.y, robot.angle, trail, sc, jumpH);
+      // Shadow under robot gets smaller as it rises
+      if (jumpH > 5) {
+        const shadowScale = 1 - (jumpH / 55) * 0.5;
+        ctx.fillStyle = `rgba(0,0,0,${0.08 * shadowScale})`;
+        ctx.beginPath();
+        ctx.ellipse(robot.x, robot.y + ROBOT_R + 6, ROBOT_R * 0.9 * shadowScale, 7 * shadowScale, 0, 0, Math.PI * 2);
+        ctx.fill();
+      }
 
       if (t < 1) requestAnimationFrame(frame);
       else { drawScene(); resolve(); }
@@ -722,7 +796,7 @@ function playBoop(freq = 440) {
 function playSingMelody() {
   try {
     const ctx = getAudioCtx();
-    const notes = [523, 587, 659, 698, 784, 698, 659, 587]; // C5 D5 E5 F5 G5 F5 E5 D5
+    const notes = [523, 587, 659, 698, 784, 698, 659, 587, 523, 659, 784, 880];
     notes.forEach((freq, i) => {
       const osc = ctx.createOscillator();
       const gain = ctx.createGain();
@@ -742,18 +816,17 @@ function playSingMelody() {
 function playClapSound() {
   try {
     const ctx = getAudioCtx();
-    // White noise burst for clap
-    for (let c = 0; c < 2; c++) {
-      const bufferSize = ctx.sampleRate * 0.05;
+    for (let c = 0; c < 4; c++) {
+      const bufferSize = ctx.sampleRate * 0.06;
       const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
       const data = buffer.getChannelData(0);
       for (let i = 0; i < bufferSize; i++) data[i] = (Math.random() * 2 - 1) * (1 - i / bufferSize);
       const source = ctx.createBufferSource();
       source.buffer = buffer;
       const gain = ctx.createGain();
-      const t = ctx.currentTime + c * 0.2;
+      const t = ctx.currentTime + c * 0.25;
       gain.gain.setValueAtTime(0.3, t);
-      gain.gain.exponentialRampToValueAtTime(0.001, t + 0.05);
+      gain.gain.exponentialRampToValueAtTime(0.001, t + 0.06);
       source.connect(gain);
       gain.connect(ctx.destination);
       source.start(t);
@@ -766,14 +839,14 @@ function playClapSound() {
 // ============================================================
 function launchConfetti() {
   const colors = ['#e84393','#6c5ce7','#0984e3','#00b894','#fdcb6e','#e17055','#d63031','#00cec9','#fd79a8','#a29bfe'];
-  for (let i = 0; i < 60; i++) {
+  for (let i = 0; i < 80; i++) {
     const piece = document.createElement('div');
     piece.className = 'confetti-piece';
     piece.style.background = colors[Math.floor(Math.random() * colors.length)];
     piece.style.left = Math.random() * 100 + 'vw';
     piece.style.top = '-10px';
-    piece.style.width = (6 + Math.random() * 8) + 'px';
-    piece.style.height = (6 + Math.random() * 8) + 'px';
+    piece.style.width = (8 + Math.random() * 10) + 'px';
+    piece.style.height = (8 + Math.random() * 10) + 'px';
     piece.style.animationDuration = (2 + Math.random() * 2) + 's';
     piece.style.animationDelay = Math.random() * 0.5 + 's';
     document.body.appendChild(piece);
