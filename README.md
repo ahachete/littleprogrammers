@@ -1,4 +1,4 @@
-# I Am a Robot!
+# Little Programmers!
 
 A collection of interactive web demos for a 30-minute presentation to 4-5 year old kids,
 explaining what a computer is and what programming means.
@@ -16,9 +16,11 @@ explaining what a computer is and what programming means.
 
 | File | Description |
 |---|---|
-| [`robot.html`](robot.html) | **I Am a Robot** — the main programming demo. See [design doc](docs/robot-app-design.md). |
+| [`index.html`](index.html) | **Little Programmers!** — launcher page with two big illustrated cards linking to the demos below. |
+| [`count.html`](count.html) | **How Fast Can a Computer Count?** — pick a character (R2D2, Bluey, Marshall), type a number (1-1000), and watch them fill the screen with accelerating speed. |
+| [`robot.html`](robot.html) | **Program the Robot!** — a visual, Logo-inspired programming demo. See [design doc](docs/robot-app-design.md). |
 
 
 ## Running
 
-All demos are static HTML files with zero dependencies. Open any of them directly in a browser.
+All demos are static HTML files with zero dependencies. Open [`index.html`](index.html) in a browser to get started, or open any demo directly.
