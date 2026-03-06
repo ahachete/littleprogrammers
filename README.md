@@ -25,4 +25,6 @@ explaining what a computer is and what programming means.
 
 ## Running
 
-All demos are static HTML files with zero dependencies. Open [`index.html`](index.html) in a browser to get started, or open any demo directly.
+All demos are static HTML files with zero dependencies.
+
+**[Try it live!](https://ahachete.github.io/iamarobot/)** — or open `index.html` locally in a browser.

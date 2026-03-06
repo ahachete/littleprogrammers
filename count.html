@@ -24,7 +24,20 @@
     padding: 10px 0 8px;
     background: linear-gradient(90deg, #6c5ce7, #e84393, #fd79a8, #fdcb6e, #00b894);
     letter-spacing: 2px;
+    position: relative;
   }
+
+  .back-btn {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-decoration: none;
+    font-size: 2rem;
+    filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.3));
+    transition: transform 0.15s;
+  }
+  .back-btn:hover { transform: translateY(-50%) scale(1.2); }
 
   .container {
     display: flex;
@@ -194,7 +207,7 @@
 </head>
 <body>
 
-<h1>&#129302; How Fast Can a Computer Count? &#129302;</h1>
+<h1><a href="index.html" class="back-btn">&#x1F3E0;</a>&#129302; How Fast Can a Computer Count? &#129302;</h1>
 
 <div class="container">
   <div class="left-panel">
