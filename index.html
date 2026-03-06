@@ -114,11 +114,11 @@
   // Draw a grid of mixed mini characters
   const chars = [drawMiniR2D2, drawMiniBluey, drawMiniMarshall];
   const size = 28;
-  const gap = 8;
+  const gap = 10;
   const cell = size + gap;
   const topReserved = 32; // space for counter text
-  const cols = Math.floor((c.width - 20) / cell);
-  const rows = Math.floor((c.height - 20 - topReserved) / cell);
+  const cols = 7;
+  const rows = 6;
   const offsetX = (c.width - cols * cell + gap) / 2 + size / 2;
   const offsetY = topReserved + (c.height - topReserved - rows * cell + gap) / 2 + size / 2;
 
