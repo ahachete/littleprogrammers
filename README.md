@@ -3,6 +3,8 @@
 A collection of interactive web demos for a 30-minute presentation to 4-5 year old kids,
 explaining what a computer is and what programming means.
 
+![Little Programmers launcher](docs/screenshot-index.png)
+
 
 ## The Presentation
 
