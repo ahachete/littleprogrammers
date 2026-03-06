@@ -77,6 +77,28 @@
   .game-btn .btn-title .emoji {
     font-size: 2.2rem;
   }
+
+  @media (max-width: 768px) {
+    .menu {
+      flex-direction: column;
+      gap: 20px;
+      padding: 20px 16px;
+    }
+    .game-btn {
+      max-width: 100%;
+      padding: 20px 16px;
+    }
+    .game-btn canvas {
+      width: 240px;
+      height: 200px;
+    }
+    .game-btn .btn-title {
+      font-size: 1.6rem;
+    }
+    .game-btn .btn-subtitle {
+      font-size: 1.1rem;
+    }
+  }
 </style>
 </head>
 <body>

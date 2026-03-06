@@ -97,3 +97,29 @@ h1 {
 .site-footer a:hover {
   text-decoration: underline;
 }
+
+/* ===== MOBILE RESPONSIVENESS ===== */
+@media (max-width: 768px) {
+  body {
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+  }
+  h1 {
+    font-size: 1.6rem;
+    padding: 8px 0 6px;
+  }
+  .back-btn {
+    font-size: 1.5rem;
+    left: 8px;
+  }
+  .container {
+    flex-direction: column;
+    flex: 1;
+    height: auto;
+  }
+  .right-panel {
+    min-height: 320px;
+    padding: 16px 0;
+  }
+}
