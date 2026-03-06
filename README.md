@@ -27,4 +27,4 @@ explaining what a computer is and what programming means.
 
 All demos are static HTML files with zero dependencies.
 
-**[Try it live!](https://ahachete.github.io/iamarobot/)** — or open `index.html` locally in a browser.
+**[Try it live!](https://ahachete.github.io/littleprogrammers/)** — or open `index.html` locally in a browser.
