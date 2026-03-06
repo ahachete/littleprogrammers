@@ -19,7 +19,7 @@ explaining what a computer is and what programming means.
 | File | Description |
 |---|---|
 | [`index.html`](index.html) | **Little Programmers!** — launcher page with two big illustrated cards linking to the demos below. |
-| [`count.html`](count.html) | **How Fast Can a Computer Count?** — pick a character (R2D2, Bluey, Marshall), type a number (1-1000), and watch them fill the screen with accelerating speed. |
+| [`count.html`](count.html) | **How Fast Can a Computer Count?** — pick a character (R2D2, Bluey, Marshall, H. Potter), type a number (1-1000), and watch them fill the screen with accelerating speed. |
 | [`robot.html`](robot.html) | **Program the Robot!** — a visual, Logo-inspired programming demo. See [design doc](docs/robot-app-design.md). |
 
 

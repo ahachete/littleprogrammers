@@ -69,6 +69,7 @@
     display: flex;
     gap: 14px;
     justify-content: center;
+    flex-wrap: wrap;
   }
 
   .char-btn {
@@ -194,6 +195,10 @@
         <button class="char-btn" id="charMarshall" onclick="selectChar('marshall')">
           <canvas width="100" height="110" id="previewMarshall"></canvas>
           <span class="char-name">Marshall</span>
+        </button>
+        <button class="char-btn" id="charHpotter" onclick="selectChar('hpotter')">
+          <canvas width="100" height="110" id="previewHpotter"></canvas>
+          <span class="char-name">H. Potter</span>
         </button>
       </div>
     </div>
@@ -628,14 +633,175 @@ function drawMarshall(targetCtx, cx, cy, size) {
   targetCtx.restore();
 }
 
-const DRAW_FNS = { r2d2: drawR2D2, bluey: drawBluey, marshall: drawMarshall };
+function drawHpotter(targetCtx, cx, cy, size) {
+  const s = size / 32;
+  targetCtx.save();
+  targetCtx.translate(cx, cy);
+  targetCtx.scale(s, s);
+
+  // Robe / body (dark Gryffindor red)
+  targetCtx.fillStyle = '#6b1d1d';
+  targetCtx.beginPath();
+  targetCtx.ellipse(0, 8, 9, 10, 0, 0, Math.PI * 2);
+  targetCtx.fill();
+  targetCtx.strokeStyle = '#4a1010';
+  targetCtx.lineWidth = 0.8;
+  targetCtx.stroke();
+
+  // Gryffindor scarf stripes (gold + maroon)
+  targetCtx.fillStyle = '#fdcb6e';
+  targetCtx.fillRect(-5, 0, 10, 2);
+  targetCtx.fillStyle = '#6b1d1d';
+  targetCtx.fillRect(-5, 2, 10, 1.5);
+  targetCtx.fillStyle = '#fdcb6e';
+  targetCtx.fillRect(-5, 3.5, 10, 2);
+
+  // Robe collar
+  targetCtx.fillStyle = '#4a1010';
+  targetCtx.beginPath();
+  targetCtx.ellipse(0, 1, 6, 2.5, 0, 0, Math.PI);
+  targetCtx.fill();
+
+  // Little feet (dark shoes)
+  targetCtx.fillStyle = '#2d3436';
+  targetCtx.beginPath();
+  targetCtx.ellipse(-5, 17, 3, 2, -0.15, 0, Math.PI * 2);
+  targetCtx.fill();
+  targetCtx.beginPath();
+  targetCtx.ellipse(5, 17, 3, 2, 0.15, 0, Math.PI * 2);
+  targetCtx.fill();
+
+  // Wand (right side, sticking out)
+  targetCtx.strokeStyle = '#8B4513';
+  targetCtx.lineWidth = 1.8;
+  targetCtx.lineCap = 'round';
+  targetCtx.beginPath();
+  targetCtx.moveTo(9, 4);
+  targetCtx.lineTo(16, -8);
+  targetCtx.stroke();
+  // Wand tip sparkle
+  targetCtx.fillStyle = '#fdcb6e';
+  targetCtx.beginPath();
+  targetCtx.arc(16, -8, 1.5, 0, Math.PI * 2);
+  targetCtx.fill();
+
+  // Head (skin tone)
+  targetCtx.fillStyle = '#f5cba7';
+  targetCtx.beginPath();
+  targetCtx.arc(0, -5, 10, 0, Math.PI * 2);
+  targetCtx.fill();
+
+  // Messy black hair
+  targetCtx.fillStyle = '#2d3436';
+  // Hair top mass
+  targetCtx.beginPath();
+  targetCtx.arc(0, -8, 11, Math.PI, 0);
+  targetCtx.fill();
+  // Messy tufts
+  targetCtx.beginPath();
+  targetCtx.ellipse(-8, -10, 4, 6, -0.3, 0, Math.PI * 2);
+  targetCtx.fill();
+  targetCtx.beginPath();
+  targetCtx.ellipse(8, -10, 4, 6, 0.3, 0, Math.PI * 2);
+  targetCtx.fill();
+  targetCtx.beginPath();
+  targetCtx.ellipse(0, -16, 5, 4, 0, 0, Math.PI * 2);
+  targetCtx.fill();
+  // Extra messy spikes
+  targetCtx.beginPath();
+  targetCtx.ellipse(-5, -17, 3, 3.5, -0.4, 0, Math.PI * 2);
+  targetCtx.fill();
+  targetCtx.beginPath();
+  targetCtx.ellipse(5, -17, 3, 3.5, 0.4, 0, Math.PI * 2);
+  targetCtx.fill();
+  targetCtx.beginPath();
+  targetCtx.ellipse(2, -18, 2.5, 3, 0.2, 0, Math.PI * 2);
+  targetCtx.fill();
+  // Hair sides
+  targetCtx.beginPath();
+  targetCtx.ellipse(-10, -5, 3, 5, -0.1, 0, Math.PI * 2);
+  targetCtx.fill();
+  targetCtx.beginPath();
+  targetCtx.ellipse(10, -5, 3, 5, 0.1, 0, Math.PI * 2);
+  targetCtx.fill();
+
+  // Lightning bolt scar
+  targetCtx.strokeStyle = '#d63031';
+  targetCtx.lineWidth = 1.2;
+  targetCtx.lineJoin = 'round';
+  targetCtx.beginPath();
+  targetCtx.moveTo(-2, -12);
+  targetCtx.lineTo(0, -10);
+  targetCtx.lineTo(-1.5, -9);
+  targetCtx.lineTo(1, -7);
+  targetCtx.stroke();
+
+  // Glasses - round frames
+  targetCtx.strokeStyle = '#2d3436';
+  targetCtx.lineWidth = 1.2;
+  // Left lens
+  targetCtx.beginPath();
+  targetCtx.arc(-4, -5, 3.5, 0, Math.PI * 2);
+  targetCtx.stroke();
+  // Right lens
+  targetCtx.beginPath();
+  targetCtx.arc(4, -5, 3.5, 0, Math.PI * 2);
+  targetCtx.stroke();
+  // Bridge
+  targetCtx.beginPath();
+  targetCtx.moveTo(-0.5, -5);
+  targetCtx.lineTo(0.5, -5);
+  targetCtx.stroke();
+
+  // Eyes (green - Harry's signature)
+  targetCtx.fillStyle = '#fff';
+  targetCtx.beginPath();
+  targetCtx.ellipse(-4, -5, 2.5, 3, 0, 0, Math.PI * 2);
+  targetCtx.fill();
+  targetCtx.beginPath();
+  targetCtx.ellipse(4, -5, 2.5, 3, 0, 0, Math.PI * 2);
+  targetCtx.fill();
+  // Green pupils
+  targetCtx.fillStyle = '#27ae60';
+  targetCtx.beginPath();
+  targetCtx.arc(-3.5, -4.5, 1.5, 0, Math.PI * 2);
+  targetCtx.fill();
+  targetCtx.beginPath();
+  targetCtx.arc(3.5, -4.5, 1.5, 0, Math.PI * 2);
+  targetCtx.fill();
+  // Eye highlights
+  targetCtx.fillStyle = '#fff';
+  targetCtx.beginPath();
+  targetCtx.arc(-4.2, -5.5, 0.7, 0, Math.PI * 2);
+  targetCtx.fill();
+  targetCtx.beginPath();
+  targetCtx.arc(2.8, -5.5, 0.7, 0, Math.PI * 2);
+  targetCtx.fill();
+
+  // Nose
+  targetCtx.fillStyle = '#e2a77a';
+  targetCtx.beginPath();
+  targetCtx.ellipse(0, -1.5, 1.5, 1.2, 0, 0, Math.PI * 2);
+  targetCtx.fill();
+
+  // Mouth (small smile)
+  targetCtx.strokeStyle = '#c0392b';
+  targetCtx.lineWidth = 0.8;
+  targetCtx.beginPath();
+  targetCtx.arc(0, 0.5, 2.5, 0.2, Math.PI - 0.2);
+  targetCtx.stroke();
+
+  targetCtx.restore();
+}
+
+const DRAW_FNS = { r2d2: drawR2D2, bluey: drawBluey, marshall: drawMarshall, hpotter: drawHpotter };
 
 // ============================================================
 // PREVIEW THUMBNAILS
 // ============================================================
 function drawPreviews() {
-  const chars = ['R2D2', 'Bluey', 'Marshall'];
-  const fns = [drawR2D2, drawBluey, drawMarshall];
+  const chars = ['R2D2', 'Bluey', 'Marshall', 'Hpotter'];
+  const fns = [drawR2D2, drawBluey, drawMarshall, drawHpotter];
   for (let i = 0; i < chars.length; i++) {
     const c = document.getElementById('preview' + chars[i]);
     const pctx = c.getContext('2d');
