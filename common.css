@@ -7,6 +7,8 @@ body {
   background: linear-gradient(135deg, #a8edea 0%, #fed6e3 50%, #d4fc79 100%);
   min-height: 100vh;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 h1 {
@@ -35,8 +37,9 @@ h1 {
 /* Layout shared by count.html and robot.html */
 .container {
   display: flex;
-  height: calc(100vh - 62px - 30px);
+  flex: 1;
   gap: 0;
+  min-height: 0;
 }
 
 .right-panel {
@@ -81,6 +84,7 @@ h1 {
 .site-footer {
   text-align: center;
   padding: 10px 0;
+  line-height: 1.25;
   font-size: 1.1rem;
   color: #636e72;
   background: rgba(255,255,255,0.6);
@@ -102,8 +106,6 @@ h1 {
 @media (max-width: 768px) {
   body {
     overflow: visible;
-    display: flex;
-    flex-direction: column;
   }
   h1 {
     font-size: 1.6rem;
@@ -115,8 +117,6 @@ h1 {
   }
   .container {
     flex-direction: column;
-    flex: 1;
-    height: auto;
   }
   .right-panel {
     min-height: 320px;

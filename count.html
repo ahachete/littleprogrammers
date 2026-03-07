@@ -67,7 +67,7 @@
   /* CHARACTER PICKER */
   .char-picker {
     display: flex;
-    gap: 14px;
+    gap: 10px;
     justify-content: center;
     flex-wrap: wrap;
   }
@@ -77,8 +77,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 140px;
-    height: 155px;
+    width: 76px;
+    height: 105px;
     border: 4px solid rgba(0,0,0,0.1);
     border-radius: 18px;
     cursor: pointer;
@@ -104,8 +104,8 @@
   }
 
   .char-btn .char-name {
-    margin-top: 6px;
-    font-size: 1.2rem;
+    margin-top: 4px;
+    font-size: 0.95rem;
   }
 
   .draw-btn {
@@ -136,16 +136,7 @@
       padding: 16px 12px;
     }
     .char-btn {
-      width: 100px;
-      height: 115px;
       padding: 6px;
-    }
-    .char-btn canvas {
-      width: 70px;
-      height: 78px;
-    }
-    .char-btn .char-name {
-      font-size: 1rem;
     }
     .number-input {
       width: 180px;
@@ -185,19 +176,19 @@
       <div class="section-title">Pick a character:</div>
       <div class="char-picker">
         <button class="char-btn selected" id="charR2d2" onclick="selectChar('r2d2')">
-          <canvas width="100" height="110" id="previewR2D2"></canvas>
+          <canvas width="60" height="70" id="previewR2D2"></canvas>
           <span class="char-name">R2D2</span>
         </button>
         <button class="char-btn" id="charBluey" onclick="selectChar('bluey')">
-          <canvas width="100" height="110" id="previewBluey"></canvas>
+          <canvas width="60" height="70" id="previewBluey"></canvas>
           <span class="char-name">Bluey</span>
         </button>
         <button class="char-btn" id="charMarshall" onclick="selectChar('marshall')">
-          <canvas width="100" height="110" id="previewMarshall"></canvas>
+          <canvas width="60" height="70" id="previewMarshall"></canvas>
           <span class="char-name">Marshall</span>
         </button>
         <button class="char-btn" id="charHpotter" onclick="selectChar('hpotter')">
-          <canvas width="100" height="110" id="previewHpotter"></canvas>
+          <canvas width="60" height="70" id="previewHpotter"></canvas>
           <span class="char-name">H. Potter</span>
         </button>
       </div>
@@ -213,7 +204,7 @@
   </div>
 </div>
 
-<footer class="site-footer">Made with <span class="heart">&#10084;</span> by <a href="https://aht.es">aht</a></footer>
+<footer class="site-footer">Made with <span class="heart">&#10084;</span> by <a href="https://aht.es">aht</a><br><a href="https://github.com/ahachete/littleprogrammers">Source code</a></footer>
 
 <script>
 // ============================================================
@@ -805,8 +796,8 @@ function drawPreviews() {
   for (let i = 0; i < chars.length; i++) {
     const c = document.getElementById('preview' + chars[i]);
     const pctx = c.getContext('2d');
-    pctx.clearRect(0, 0, 100, 110);
-    fns[i](pctx, 50, 58, 64);
+    pctx.clearRect(0, 0, 60, 70);
+    fns[i](pctx, 30, 38, 42);
   }
 }
 setTimeout(drawPreviews, 60);
