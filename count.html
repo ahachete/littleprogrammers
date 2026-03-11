@@ -819,8 +819,8 @@ function selectChar(name) {
 // ============================================================
 function calcGrid(n, canvasW, canvasH) {
   const padding = 16;
-  const availW = canvasW - padding * 2;
-  const availH = canvasH - padding * 2;
+  const availW = Math.max(1, canvasW - padding * 2);
+  const availH = Math.max(1, canvasH - padding * 2);
   const gapRatio = 0.35;  // gap = 35% of icon size
 
   // For small N, icons should fill the width; for large N, pack tightly.
@@ -893,7 +893,8 @@ function startDraw() {
   animating = true;
   document.getElementById('drawBtn').disabled = true;
 
-  clearCanvas();
+  // Re-measure canvas to match current panel size (layout may have shifted on mobile)
+  resizeCanvas();
 
   const counterH = 38; // reserved height for counter at top
   const grid = calcGrid(n, canvas.width, canvas.height - counterH);
